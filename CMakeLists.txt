@@ -58,6 +58,8 @@ endif()
 # sources shared across nodes
 set(common_src src/image_converter.cpp src/ros_compat.cpp)
 
+link_directories(/usr/lib/aarch64-linux-gnu/tegra) 
+
 # inference nodes
 add_executable(imagenet src/node_imagenet.cpp ${common_src})
 target_link_libraries(imagenet ${catkin_LIBRARIES} jetson-inference)
